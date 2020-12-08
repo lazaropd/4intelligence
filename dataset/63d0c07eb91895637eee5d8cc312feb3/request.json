@@ -1,0 +1,47 @@
+{
+    "headers": {
+        "content-type": "application/json"
+    },
+    "payload": {
+        "evalscript": "\n        //VERSION=3\n        function setup() {\n            return {\n                input: ['B02', 'B03', 'B04', 'B08'],\n                output: {bands: 4}\n            };\n        }\n        function evaluatePixel(sample) {return [sample.B02, sample.B03, sample.B04, sample.B08];}\n    ",
+        "input": {
+            "bounds": {
+                "bbox": [
+                    -55.578461,
+                    -12.983148,
+                    -55.477524,
+                    -12.896151
+                ],
+                "properties": {
+                    "crs": "http://www.opengis.net/def/crs/EPSG/0/4326"
+                }
+            },
+            "data": [
+                {
+                    "dataFilter": {
+                        "mosaickingOrder": "leastCC",
+                        "timeRange": {
+                            "from": "2020-04-06T00:00:00Z",
+                            "to": "2020-04-22T00:00:00Z"
+                        }
+                    },
+                    "type": "S2L2A"
+                }
+            ]
+        },
+        "output": {
+            "height": 956,
+            "responses": [
+                {
+                    "format": {
+                        "type": "image/tiff"
+                    },
+                    "identifier": "default"
+                }
+            ],
+            "width": 1101
+        }
+    },
+    "timestamp": "2020-12-08T10:22:02.656202",
+    "url": "https://services.sentinel-hub.com/api/v1/process"
+}
